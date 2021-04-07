@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>URL Shortener</title>
@@ -13,6 +12,19 @@
   <header>
     <h1>Short Urls</h1>
   </header>
+
+  <main id="app">
+    <form @submit.prevent="createUrl()">
+      <label for="url">Url</label>
+      <input name="url" id="url" v-model="url">
+      <label for="slug">Slug</label>
+      <input name="slug" id="slug" v-model="slug">
+      <button type="submit">Create</button>
+    </form>
+  </main>
+
+  <script src="https://unpkg.com/vue@2.6.12/dist/vue.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>

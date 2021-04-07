@@ -5,9 +5,10 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 header h1 {
   margin: 1rem;
+  text-align: center;
 }
