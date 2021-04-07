@@ -1,22 +1,28 @@
-const express = require("express");
-const morgan = require("morgan");
-const helmet = require("helmet");
-const cors = require("cors");
+const express = require('express');
+const cors = require('cors');
+const morgan = require('morgan');
+const helmet = require('helmet');
 
 const app = express();
-
 app.use(helmet());
 app.use(morgan('tiny'));
 app.use(cors());
 app.use(express.json());
+app.use(express.static('./public'));
 
-app.get('/', (req, res) => {
-    res.json({
-        message: 'URL Shortener'
-    });
+app.get('/url/:id', (req, res) => {
+  // Get a short url by ID
 });
 
-const port = process.env.PORT || 1337;
+app.get('/:id', (req, res) => {
+  // To Do: Redirect to url
+});
+
+app.post('/url', (req, res) => {
+  // To Do: Create a short url
+});
+
+const port = process.env.PORT || 1000;
 app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}`);
+  console.log(`Listening at http://localhost:${port}`);
 });
